@@ -18,32 +18,20 @@ class SearchApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def searchForInfo(self):
         # Get query from field
-        self.PFNAME = self.patientSFirstNameLineEdit.text().strip()
-        self.PLNAME = self.patientSLastNameLineEdit.text().strip()
+        PFNAME = self.patientSFNameLineEdit.text().strip()
+        PLNAME = self.patientSLNameLineEdit.text().strip()
 
-        # Execute function
-        pFname, pLname, pPhone, exDate, exFee, exDiagnosis, ex2Date, trStart, trEnd, trResult = self.hospitalOracle.searchPatient(
-            self.PFNAME, self.PLNAME)
+        # Store result from Oracle
+        storage = self.hospitalOracle.searchPatient(PFNAME, PLNAME)
 
-        # Update field
-        self.pSFNameLineEdit.setText(pFname)
-        self.pSLNameLineEdit.setText(pLname)
-        self.pSPNumberLineEdit.setText(pPhone)
-        self.examinationSDiagnosisLineEdit.setText(
-            'Not Found' if len(exDiagnosis) == 0 else ', '.join(
-                x for x in exDiagnosis))
-        self.examinationSFeeLineEdit.setText(
-            'Not Found' if len(exFee) == 0 else ', '.join(x for x in exFee))
-        self.examinationSSecondDateLineEdit.setText(
-            'Not Found' if len(ex2Date) == 0 else ', '.join(x
-                                                        for x in ex2Date))
-        self.examniationSDateLineEdit.setText(
-            'Not Found' if len(exDate) == 0 else ', '.join(x for x in exDate))
-        self.treatmentSStartDateLineEdit.setText(
-            'Not Found' if len(trStart) == 0 else ', '.join(x
-                                                            for x in trStart))
-        self.treatmentSEndDateLineEdit.setText(
-            'Not Found' if len(trEnd) == 0 else ', '.join(x for x in trEnd))
-        self.treatmentResultLineEdit.setText('Not Found' if len(trResult) ==
-                                             0 else ', '.join(
-                                                 x for x in trResult))
+        # Reset table
+        self.tableWidget.setRowCount(0)
+
+        # Insert into table
+        for rowPosition, row in enumerate(storage):
+            self.tableWidget.insertRow(rowPosition)
+            for colPosition, data in enumerate(row):
+                self.tableWidget.setItem(rowPosition, colPosition, QtWidgets.QTableWidgetItem(str(data).strip()))
+        
+
+        
