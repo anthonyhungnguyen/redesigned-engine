@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>640</width>
-    <height>480</height>
+    <height>440</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
       <x>230</x>
       <y>170</y>
       <width>160</width>
-      <height>82</height>
+      <height>88</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout">
@@ -61,7 +61,7 @@
      <x>0</x>
      <y>0</y>
      <width>640</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuSIgn_In">
@@ -82,21 +82,36 @@
    <addaction name="menuQuery"/>
   </widget>
   <action name="actionSearch">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Search</string>
    </property>
   </action>
   <action name="actionInput">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Input</string>
    </property>
   </action>
   <action name="actionList">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>List</string>
    </property>
   </action>
   <action name="actionReport">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Report</string>
    </property>
