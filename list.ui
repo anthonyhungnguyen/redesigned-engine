@@ -6,208 +6,210 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1120</width>
-    <height>839</height>
+    <width>863</width>
+    <height>624</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>List</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="formLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>50</y>
-      <width>461</width>
-      <height>112</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Segoe UI</family>
-      <pointsize>11</pointsize>
-     </font>
-    </property>
-    <layout class="QFormLayout" name="formLayout">
-     <item row="0" column="0">
-      <widget class="QLabel" name="doctorSFNameLabel">
-       <property name="font">
-        <font>
-         <family>Segoe UI</family>
-         <pointsize>11</pointsize>
-        </font>
-       </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="1">
+     <layout class="QFormLayout" name="formLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="doctorSFNameLabel">
+        <property name="font">
+         <font>
+          <family>Segoe UI</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Doctor's FName</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="doctorSFNameLineEdit">
+        <property name="font">
+         <font>
+          <family>Segoe UI</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="doctorSLNameLabel">
+        <property name="font">
+         <font>
+          <family>Segoe UI</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Doctor's LName</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="doctorSLNameLineEdit">
+        <property name="font">
+         <font>
+          <family>Segoe UI</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QPushButton" name="pushButtonSearchPatients">
+        <property name="font">
+         <font>
+          <family>Segoe UI</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Search Patients</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <family>Segoe UI</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Out Patients</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="2">
+     <widget class="QTableWidget" name="tableWidget">
+      <column>
        <property name="text">
-        <string>Doctor's FName</string>
+        <string>PID</string>
        </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="doctorSFNameLineEdit">
-       <property name="font">
-        <font>
-         <family>Segoe UI</family>
-         <pointsize>11</pointsize>
-        </font>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="doctorSLNameLabel">
-       <property name="font">
-        <font>
-         <family>Segoe UI</family>
-         <pointsize>11</pointsize>
-        </font>
-       </property>
+      </column>
+      <column>
        <property name="text">
-        <string>Doctor's LName</string>
+        <string>PFName</string>
        </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="doctorSLNameLineEdit">
-       <property name="font">
-        <font>
-         <family>Segoe UI</family>
-         <pointsize>11</pointsize>
-        </font>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QPushButton" name="pushButtonSearchPatients">
-       <property name="font">
-        <font>
-         <family>Segoe UI</family>
-         <pointsize>11</pointsize>
-        </font>
-       </property>
+      </column>
+      <column>
        <property name="text">
-        <string>Search Patients</string>
+        <string>PLName</string>
        </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QTableWidget" name="tableWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>210</y>
-      <width>1101</width>
-      <height>251</height>
-     </rect>
-    </property>
-    <column>
-     <property name="text">
-      <string>PID</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>PFName</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>PLName</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>PPhone</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>PDOB</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>ExDate</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>ExFee</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>ExDiagnosis</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>ExSecondExamination</string>
-     </property>
-    </column>
-   </widget>
-   <widget class="QTableWidget" name="tableWidget_2">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>500</y>
-      <width>1101</width>
-      <height>281</height>
-     </rect>
-    </property>
-    <column>
-     <property name="text">
-      <string>PID</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>PFName</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>PLName</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>PPhone</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>PDOB</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>TrStart</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>TrEnd</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>TrDiagnosis</string>
-     </property>
-    </column>
-   </widget>
+      </column>
+      <column>
+       <property name="text">
+        <string>PPhone</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>PDOB</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>ExDate</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>ExFee</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>ExDiagnosis</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Ex2nd</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="font">
+       <font>
+        <family>Segoe UI</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>In Patients</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0" colspan="2">
+     <widget class="QTableWidget" name="tableWidget_2">
+      <column>
+       <property name="text">
+        <string>PID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>PFName</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>PLName</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>PPhone</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>PDOB</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>TrStart</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>TrEnd</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>TrDiagnosis</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+   </layout>
   </widget>
+  <widget class="QStatusBar" name="statusbar"/>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1120</width>
+     <width>863</width>
      <height>26</height>
     </rect>
    </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>

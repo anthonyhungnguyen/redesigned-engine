@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import *
 from search import SearchApp
 from insert import InsertApp
 from listP import ListApp
+from report import ReportApp
 
 qtCreatorFile = "test.ui"  # Enter file here.
 
@@ -20,6 +21,8 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.actionSearch.triggered.connect(self.openSearch)
         self.actionInput.triggered.connect(self.openInsert)
         self.actionList.triggered.connect(self.openList)
+        self.actionReport.triggered.connect(self.openReport)
+        self.actionLogout.triggered.connect(self.logOut)
 
     def checkValidInfo(self):
         msg = QMessageBox()
@@ -34,6 +37,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             self.actionInput.setEnabled(True)
             self.actionList.setEnabled(True)
             self.actionReport.setEnabled(True)
+            self.actionLogout.setEnabled(True)
         else:
             msg.setText("Your username or password is incorrect")
             msg.setWindowTitle("Failed")
@@ -49,8 +53,18 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.insert_window.show()
 
     def openList(self):
-        self.insert_window = ListApp()
-        self.insert_window.show()
+        self.list_window = ListApp()
+        self.list_window.show()
+    
+    def openReport(self):
+        self.report_window = ReportApp()
+        self.report_window.show()
+
+    def logOut(self):
+        self.search_window.close()
+        self.insert_window.close()
+        self.list_window.close()
+        self.report_window.close()
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)

@@ -2,31 +2,19 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
-  <property name="windowModality">
-   <enum>Qt::WindowModal</enum>
-  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>847</width>
-    <height>527</height>
+    <width>946</width>
+    <height>676</height>
    </rect>
   </property>
-  <property name="baseSize">
-   <size>
-    <width>0</width>
-    <height>0</height>
-   </size>
-  </property>
   <property name="windowTitle">
-   <string>Search</string>
-  </property>
-  <property name="windowOpacity">
-   <double>1.000000000000000</double>
+   <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout_3">
+   <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
      <layout class="QFormLayout" name="formLayout">
       <item row="0" column="0">
@@ -94,17 +82,12 @@
      <widget class="QTableWidget" name="tableWidget">
       <column>
        <property name="text">
-        <string>P's FName</string>
+        <string>PID</string>
        </property>
       </column>
       <column>
        <property name="text">
-        <string>P's LName</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>P's PNumber</string>
+        <string>Ex's ID</string>
        </property>
       </column>
       <column>
@@ -119,12 +102,26 @@
       </column>
       <column>
        <property name="text">
-        <string>Ex's Diagnosis</string>
+        <string>MPrice</string>
        </property>
       </column>
       <column>
        <property name="text">
-        <string>Ex's 2ndDate</string>
+        <string>Total Payment</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QTableWidget" name="tableWidget_2">
+      <column>
+       <property name="text">
+        <string>PID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Tr's ID</string>
        </property>
       </column>
       <column>
@@ -139,7 +136,17 @@
       </column>
       <column>
        <property name="text">
-        <string>Tr's Result</string>
+        <string>MPrice</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>PFee</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Total Payment</string>
        </property>
       </column>
      </widget>
