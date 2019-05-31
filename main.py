@@ -6,7 +6,7 @@ from insert import InsertApp
 from listP import ListApp
 from report import ReportApp
 
-qtCreatorFile = "test.ui"  # Enter file here.
+qtCreatorFile = "main.ui"  # Enter file here.
 
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 
@@ -15,14 +15,18 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         QtWidgets.QMainWindow.__init__(self)
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
-        self.username = "1"
-        self.password = "1"
+        self.username = "manager"
+        self.password = "hung"
         self.pushButton_Login.clicked.connect(self.checkValidInfo)
         self.actionSearch.triggered.connect(self.openSearch)
         self.actionInput.triggered.connect(self.openInsert)
         self.actionList.triggered.connect(self.openList)
         self.actionReport.triggered.connect(self.openReport)
         self.actionLogout.triggered.connect(self.logOut)
+        self.search_window = SearchApp()
+        self.insert_window = InsertApp()
+        self.list_window = ListApp()
+        self.report_window = ReportApp()
 
     def checkValidInfo(self):
         msg = QMessageBox()
@@ -38,6 +42,8 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             self.actionList.setEnabled(True)
             self.actionReport.setEnabled(True)
             self.actionLogout.setEnabled(True)
+            self.usernameLineEdit.setText('')
+            self.passwordLineEdit.setText('')
         else:
             msg.setText("Your username or password is incorrect")
             msg.setWindowTitle("Failed")
@@ -45,19 +51,15 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         msg.exec_()
     
     def openSearch(self):
-        self.search_window = SearchApp()
         self.search_window.show()
     
     def openInsert(self):
-        self.insert_window = InsertApp()
         self.insert_window.show()
 
     def openList(self):
-        self.list_window = ListApp()
         self.list_window.show()
     
     def openReport(self):
-        self.report_window = ReportApp()
         self.report_window.show()
 
     def logOut(self):
@@ -65,6 +67,13 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.insert_window.close()
         self.list_window.close()
         self.report_window.close()
+        self.actionSearch.setEnabled(False)
+        self.actionInput.setEnabled(False)
+        self.actionList.setEnabled(False)
+        self.actionReport.setEnabled(False)
+        self.actionLogout.setEnabled(False)
+        self.usernameLineEdit.setText('')
+        self.passwordLineEdit.setText('')
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)

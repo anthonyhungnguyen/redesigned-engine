@@ -27,8 +27,8 @@ class ReportApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
         rowOut = 0
         rowIn = 0
-        listOut = [0,1,2,3,7,9]
-        listIn = [0,4,5,6,7,8,10]
+        listOut = [0,1,3,4,6]
+        listIn = [0,2,3,5,7]
         for row in storage:
             if row[1] is not None:
                 colPositionOut = 0

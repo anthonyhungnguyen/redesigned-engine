@@ -22,17 +22,28 @@ class InsertApp(QtWidgets.QMainWindow, Ui_MainWindow):
         PGENDER = self.pGenderLineEdit.text().strip()
         PPHONE = self.pPhoneLineEdit.text().strip()
         PADDRESS = self.pAddressLineEdit.text().strip()
-
+        PDOBLIST = PDOB.split('-')
+        WillInsert = True
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
-        if PFNAME is not None and PLNAME is not None:
+
+        if PFNAME is '' or PLNAME is '' or PGENDER is '' or PPHONE is '' or PADDRESS is '':
+            msg.setText("All fields must not be empty")
+            msg.setWindowTitle("Failed")
+            msg.setStandardButtons(QMessageBox.Ok)
+            msg.exec_()
+            WillInsert=False
+
+        if (len(PDOBLIST) != 3 or len(PDOBLIST[0]) != 4 or len(PDOBLIST[1]) != 2 or len(PDOBLIST[2]) != 2 or int(PDOBLIST[1]) > 12 or int(PDOBLIST[1]) < 0 or int(PDOBLIST[2]) < 0 or int(PDOBLIST[2]) > 31):
+            msg.setText("Please enter date of birth correctly")
+            msg.setWindowTitle("Failed")
+            msg.setStandardButtons(QMessageBox.Ok)
+            msg.exec_()
+            WillInsert=False
+
+        if WillInsert:
             self.hospitalOracle.insertIntoPatient(PFNAME, PLNAME, PDOB, PGENDER, PPHONE, PADDRESS)
             msg.setText("Add patient successfully")
             msg.setWindowTitle("Successfully")
             msg.setStandardButtons(QMessageBox.Ok)
-        else:
-            msg.setText("You need to enter PFNAME and PLNAME")
-            msg.setWindowTitle("Failed")
-            msg.setStandardButtons(QMessageBox.Ok)
-        msg.exec_()
-
+            msg.exec_()

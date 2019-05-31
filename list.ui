@@ -6,31 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>863</width>
-    <height>624</height>
+    <width>672</width>
+    <height>633</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>List</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="1">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
      <layout class="QFormLayout" name="formLayout">
-      <item row="0" column="0">
-       <widget class="QLabel" name="doctorSFNameLabel">
-        <property name="font">
-         <font>
-          <family>Segoe UI</family>
-          <pointsize>11</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Doctor's FName</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
+      <item row="1" column="1">
        <widget class="QLineEdit" name="doctorSFNameLineEdit">
         <property name="font">
          <font>
@@ -40,20 +27,7 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="doctorSLNameLabel">
-        <property name="font">
-         <font>
-          <family>Segoe UI</family>
-          <pointsize>11</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Doctor's LName</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
+      <item row="3" column="1">
        <widget class="QLineEdit" name="doctorSLNameLineEdit">
         <property name="font">
          <font>
@@ -63,7 +37,7 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="1">
+      <item row="4" column="1">
        <widget class="QPushButton" name="pushButtonSearchPatients">
         <property name="font">
          <font>
@@ -76,9 +50,35 @@
         </property>
        </widget>
       </item>
+      <item row="2" column="1">
+       <widget class="QLabel" name="doctorSLNameLabel">
+        <property name="font">
+         <font>
+          <family>Segoe UI</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Doctor's LName</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="doctorSFNameLabel">
+        <property name="font">
+         <font>
+          <family>Segoe UI</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Doctor's FName</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </item>
-    <item row="1" column="0">
+    <item>
      <widget class="QLabel" name="label">
       <property name="font">
        <font>
@@ -91,7 +91,7 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="0" colspan="2">
+    <item>
      <widget class="QTableWidget" name="tableWidget">
       <column>
        <property name="text">
@@ -140,7 +140,7 @@
       </column>
      </widget>
     </item>
-    <item row="3" column="0">
+    <item>
      <widget class="QLabel" name="label_2">
       <property name="font">
        <font>
@@ -153,7 +153,7 @@
       </property>
      </widget>
     </item>
-    <item row="4" column="0" colspan="2">
+    <item>
      <widget class="QTableWidget" name="tableWidget_2">
       <column>
        <property name="text">
@@ -205,7 +205,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>863</width>
+     <width>672</width>
      <height>26</height>
     </rect>
    </property>
